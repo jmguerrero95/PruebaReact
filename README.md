@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para esta prueba se uso la ultima versión de React typescript con material ui y motor css emotion, react router dom que se encarga de brindar la ruta hacia el dashboard ayudando con la seguridad del sitio al no permitir acceder al dashboard sin iniciar sesión y Sweetalert2 que nos brinda un sistema de alertas, logrando de esta manera que el usuario entienda siempre que esta sucediendo.
 
 ## Available Scripts
 
