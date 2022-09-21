@@ -1,3 +1,4 @@
+//INTERFACES PARA RESPUESTA
 export interface LoginResponse{
     data:any[],
     token:string,

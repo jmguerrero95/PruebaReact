@@ -1,6 +1,6 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Login from "./login/Login";
-
+//RUTA LOGIN
 export function AuthRouter() {
   return (
     <Routes>

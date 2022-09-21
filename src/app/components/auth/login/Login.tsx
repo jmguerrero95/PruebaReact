@@ -15,7 +15,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../store/contexts/AuthContext";
 import { AuthService } from "../../../services/auth/AuthService";
-import { GroupService } from "../../../services/grupos/GroupsService";
 import Swal from "sweetalert2";
 
 function App() {
@@ -27,6 +26,7 @@ function App() {
   const [auth, setAuth] = useState({ email: "", password: "" });
   const history = useNavigate();
 
+  //ASYNC PARA REALIZAR LOGIN
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
@@ -56,7 +56,9 @@ function App() {
       [e.target.name]: e.target.value,
     });
   };
+  //FIN ASYNC
 
+  //ESTILOS
   const theme = useTheme();
   let direction: any = "column";
 
@@ -70,9 +72,9 @@ function App() {
     },
     container: {
       opacity: "0.8",
-      height: "60%",
-      marginTop: theme.spacing(10),
-      [theme.breakpoints.down(400)]: {
+      height: "50%",
+      marginTop: theme.spacing(30),
+      [theme.breakpoints.down("sm")]: {
         margintTop: 0,
         width: "100%",
         height: "100%",
@@ -97,6 +99,7 @@ function App() {
       margin: theme.spacing(3, 0, 2),
     },
   };
+  //FIN ESTILOS
 
   return (
     <Grid container component="main" style={styles.paperContainer}>

@@ -1,3 +1,4 @@
+//INTERFACES PARA GRUPO
 export interface Group{
     name:string,
     description:string,

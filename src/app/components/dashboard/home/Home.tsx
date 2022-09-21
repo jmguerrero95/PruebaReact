@@ -12,12 +12,10 @@ import { GroupService } from "../../../services/grupos/GroupsService";
 import { Group } from "../components/Group";
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
-//const resp = await GroupService.listGroup();
 
 export function Home() {
   if (!sessionStorage.getItem("token")) {
     <Navigate to="/auth" />;
-    console.log("test");
   }
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -28,30 +26,19 @@ export function Home() {
     setAnchorEl(null);
   };
 
+  //ASYNC PARA LISTAR TODOS LOS GRUPOS
   const groupList = async () => {
     try {
       const resp = await GroupService.listGroup();
       if (resp) {
-        //console.log(resp)
         return resp;
-        /*sessionStorage.setItem(
-          "user",
-          JSON.stringify({ ...resp.data, loggedIn: true })
-        );
-        sessionStorage.setItem(
-          "token",
-          resp.token
-        );
-        dispatchUser({ type: "login", payload: resp.data });
-        history("/dashboard/home");*/
       }
     } catch (error) {}
   };
+  //FIN ASYNC
 
   useEffect(() => {
     groupList();
-
-    //console.log(groupList)
   }, []);
   return (
     <div>

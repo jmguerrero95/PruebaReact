@@ -2,6 +2,7 @@ import { TextField, Box, Button, Typography, Modal } from "@mui/material";
 import { useState } from "react";
 import { GroupService } from "../../../services/grupos/GroupsService";
 
+//ESTILOS
 const styles = {
   campo: {
     marginTop: "20px",
@@ -23,6 +24,7 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+//FIN ESTILOS
 
 export function ModalAddGroups() {
   const [group, setGroup] = useState({ name: "", description: "" });
@@ -30,6 +32,7 @@ export function ModalAddGroups() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  //ASYNC PARA AGREGAR GRUPOS
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
@@ -43,6 +46,7 @@ export function ModalAddGroups() {
       [e.target.name]: e.target.value,
     });
   };
+  //FIN ASYNC
 
   return (
     <div>

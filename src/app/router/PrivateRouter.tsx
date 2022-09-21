@@ -1,3 +1,4 @@
+//RUTA PRIVADA
 import { Navigate, Route } from "react-router-dom";
 interface Props {
   loggedIn: boolean | undefined;
@@ -6,6 +7,6 @@ interface Props {
 
 export function PrivateRouter({ loggedIn, component }: Props) {
   return (
-    <>{loggedIn ? (<Route element={component} />) : (<Route path="/auth" />)}</>
+    <>{loggedIn ? <Route element={component} /> : <Route path="/auth" />}</>
   );
 }

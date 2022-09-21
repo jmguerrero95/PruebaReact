@@ -2,6 +2,7 @@ import { TextField, Box, Button, Typography, Modal } from "@mui/material";
 import { useState } from "react";
 import { GroupService } from "../../../services/grupos/GroupsService";
 
+//ESTILOS
 const styles = {
   campo: {
     marginTop: "20px",
@@ -26,13 +27,14 @@ const style = {
 interface data {
   data: any;
 }
+//FIN ESTILOS
 
 export function ModalEditGroups({ data }: data) {
   const [group, setGroup] = useState({ name: "", description: "" });
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  //ASYNC EDITAR GRUPOS
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
@@ -46,6 +48,7 @@ export function ModalEditGroups({ data }: data) {
       [e.target.name]: e.target.value,
     });
   };
+  //FIN ASYNC
 
   return (
     <div>

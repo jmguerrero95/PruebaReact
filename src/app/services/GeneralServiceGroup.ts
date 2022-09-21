@@ -1,3 +1,4 @@
+//SERVICIOS GENERALES GRUPOS
 import axios from "axios";
 import { Navigate } from "react-router-dom";
 import { environment } from "../../environments/environments";

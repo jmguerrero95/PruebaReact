@@ -74,7 +74,7 @@ export function Group() {
       if (descriptionRef.current != null) {
         description = descriptionRef.current.value;
       }
-      const resp = await GroupService.updateGroup(id, name, description);
+      await GroupService.updateGroup(id, name, description);
       const newGroup = post.map((group: any) => {
         if (group.id === id) {
           return {
